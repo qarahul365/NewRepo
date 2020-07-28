@@ -8,19 +8,25 @@ import java.util.Scanner;
 
 public class Assignment1Update {
 
-		public void ReadData(int linenumber) throws IOException 
+		public void ReadFileData(int linenumber) throws IOException 
 		{
 		File f = new File("C:\\Users\\rahul_sharma\\Desktop\\Sampletext.txt");
 		FileReader fr = new FileReader(f);
 		BufferedReader br = new BufferedReader(fr);
 		String line;
 		int rowCount=0;
-		while(br.readLine()!=null)
-			rowCount++;
-		System.out.println("Total rows :" +rowCount);
-		
-		
-		
+	      while (br.readLine() != null) {
+	    	  rowCount++;
+	    	     }
+	      if (rowCount>linenumber) {
+	    	for(int i=0; i<linenumber;i++)	br.readLine();
+	    	line=br.readLine();
+	    	System.out.println(line);
+	      }
+	      else {
+	    	  System.out.println("Please enter valid line number");
+	      }
+	         
 		}
 		
 		public static void main(String[] args) throws IOException 
@@ -28,8 +34,8 @@ public class Assignment1Update {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Please enter the line number");
 			int l = sc.nextInt();
-			Assignment1 obj = new Assignment1();
-			obj.ReadData(l);
+			Assignment1Update obj = new Assignment1Update();
+			obj.ReadFileData(l);
 		}
 	
 }
