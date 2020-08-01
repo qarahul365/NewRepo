@@ -15,18 +15,18 @@ public class Assignment1Update {
 		BufferedReader br = new BufferedReader(fr);
 		String line;
 		int rowCount=0;
-	      while (br.readLine() != null) {
-	    	  rowCount++;
-	    	     }
-	      if (rowCount>linenumber) {
-	    	for(int i=0; i<linenumber;i++)	br.readLine();
-	    	line=br.readLine();
-	    	System.out.println(line);
-	      }
-	      else {
-	    	  System.out.println("Please enter valid line number");
-	      }
-	         
+		boolean linefound = true;
+		while ((line=br.readLine())!=null) {
+			rowCount=rowCount+1;
+			if (rowCount==linenumber) {
+				System.out.println(line);
+				linefound=false;
+				break;
+			}
+			}
+		if(linefound) {
+			System.out.println("Line does not exist");
+		}
 		}
 		
 		public static void main(String[] args) throws IOException 
