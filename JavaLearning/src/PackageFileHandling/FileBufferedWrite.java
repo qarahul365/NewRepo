@@ -8,7 +8,7 @@ import java.io.IOException;
 public class FileBufferedWrite {
 
 	public static void main(String[] args) throws IOException {
-		File f = new File("C:\\\\Users\\\\rahul_sharma\\\\Desktop\\\\Sampletext.txt");
+		File f = new File("C:\\Users\\rahul_sharma\\Desktop\\Sampletext.txt");
 		FileWriter fr = new FileWriter(f, true);
 		BufferedWriter bw = new BufferedWriter(fr);
 		bw.newLine();
