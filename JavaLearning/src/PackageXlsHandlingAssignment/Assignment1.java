@@ -2,6 +2,7 @@ package PackageXlsHandlingAssignment;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 import jxl.Cell;
 import jxl.Sheet;
@@ -14,20 +15,16 @@ public class Assignment1 {
 		File f = new File("../JavaLearning/Sheet1.xls");
 		Workbook wb = Workbook.getWorkbook(f);
 		Sheet ws = wb.getSheet(0);
-		int row = ws.getRows();
-		int column = ws.getColumns();
-		for (int i=0;i<row;i++) {
-			for (int j=0;j<column;j++) {
-				if((i==rNumber) && (j==cNumber)) {
-					Cell c1 = ws.getCell(j,i);
-					 System.out.print(c1.getContents()+ " ");
-				}
-				
-			}
+		Cell c1 = ws.getCell(cNumber,rNumber);
+		System.out.print(c1.getContents()+ " ");
 		}
-	}
 
 	public static void main(String[] args) throws BiffException, IOException {
-		Assignment1.ReadDataBasedUponRowNoAndColumnNo(0, 2);
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Please enter the row number");
+		int row = scan.nextInt();
+		System.out.println("Please enter the Column number");
+		int col = scan.nextInt();
+		Assignment1.ReadDataBasedUponRowNoAndColumnNo(row, col);
 	}
 }
