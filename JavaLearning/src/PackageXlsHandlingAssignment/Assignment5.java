@@ -35,9 +35,10 @@ public class Assignment5 {
 				Label l = new Label(j,i,str);
 				writeWs.addCell(l);
 			}
-			writeWb.write();
-			writeWb.close();
+			
 		}
+		writeWb.write();
+		writeWb.close();
 		
 	}
 	
